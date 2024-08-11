@@ -18,7 +18,7 @@ const App = () => {
     setStarships(starshipsList.results);    
     setLoading(false);
   }
-  useEffect(() => {fetchStarships();}, []);
+  useEffect(() => {fetchStarships('');}, []);
   return (
     <>
       <h1>Stars Wars API</h1>

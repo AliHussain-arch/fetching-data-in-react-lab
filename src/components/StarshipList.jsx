@@ -1,11 +1,19 @@
 import StarshipCard from './StarshipCard';
 
-const StarshipList = ({ starships }) => {
+const StarshipList = ({ starships, loading}) => {
     if (!starships) {
         return (
             <>
                 <h2>Starships</h2>
                 <p>No starships available.</p>
+            </>
+        );
+    }
+    if (loading) {
+        return (
+            <>
+                <h2>Starships</h2>
+                <p>Loading…</p>
             </>
         );
     }

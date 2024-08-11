@@ -11,18 +11,19 @@ const App = () => {
  const handleSearch = (value) => {
    setSearch(value)
  };
+ const [loading,setLoading] = useState(false);
   async function fetchStarships (term) {
     const starshipsResponse = await fetch(`${BASE_URL}starships/?search=${encodeURIComponent(term)}`);
     const starshipsList = await starshipsResponse.json();
     setStarships(starshipsList.results);    
-    return true;
+    setLoading(false);
   }
   useEffect(() => {fetchStarships();}, []);
   return (
     <>
       <h1>Stars Wars API</h1>
-      <StarshipSearch search={search} handleSearch={handleSearch} fetchStarships={fetchStarships}/>
-      <StarshipList starships={starships}/>
+      <StarshipSearch search={search} handleSearch={handleSearch} fetchStarships={fetchStarships} setLoading={setLoading}/>
+      <StarshipList starships={starships} loading={loading}/>
     </>
     
   );

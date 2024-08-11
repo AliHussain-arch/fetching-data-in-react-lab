@@ -1,6 +1,7 @@
-const StarshipSearch = ({search, handleSearch, fetchStarships}) => {
+const StarshipSearch = ({search, handleSearch, fetchStarships, setLoading}) => {
     const handleSubmit = (event) => {
-        event.preventDefault();  
+        event.preventDefault(); 
+        setLoading(true); 
         fetchStarships(search);
       };
     return (

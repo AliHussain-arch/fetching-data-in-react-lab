@@ -7,7 +7,7 @@ const StarshipSearch = ({search, handleSearch, fetchStarships}) => {
         <>
             <h2>Search</h2>
             <form onSubmit={handleSubmit}>
-                <label>Search Term : </label>
+                <label><b>Search Term :</b></label>
                 <input type="text" value={search} onChange={(event) => handleSearch(event.target.value)} required/>
                 <button>Search</button>
             </form>

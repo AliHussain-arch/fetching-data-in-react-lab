@@ -3,13 +3,17 @@ body {
   background-color: black; /* Sets the background color of the body */
   color: white; /* Sets the default text color to white */
   margin: 0; /* Removes default margin */
+  padding: 16px; /* Adds padding around the entire body */
   font-family: Arial, sans-serif; /* Sets a default font */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  box-sizing: border-box; /* Ensures padding and border are included in the total width */
 }
 
 /* Container for main content */
 main {
   padding: 16px 32px;
   width: 100%; /* Full width of the viewport */
+  box-sizing: border-box; /* Ensures padding and border are included in the total width */
 }
 
 /* Section styling */
@@ -19,6 +23,7 @@ section {
   border-radius: 8px; /* Rounded corners for the border */
   background-color: #1a1a1a; /* Background color for the section */
   width: 100%; /* Ensures section takes full width of its container */
+  box-sizing: border-box; /* Ensures padding and border are included in the total width */
 }
 
 /* Grid layout for the list of cards */
@@ -30,6 +35,7 @@ section ul {
   grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
   grid-auto-rows: minmax(200px, auto); /* Ensures rows are at least 200px high, adjusts height as needed */
   width: 100%; /* Ensures ul takes full width of the section */
+  box-sizing: border-box; /* Ensures padding and border are included in the total width */
 }
 
 /* Styling for each card */

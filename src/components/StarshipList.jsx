@@ -1,7 +1,7 @@
 import StarshipCard from './StarshipCard';
 
 const StarshipList = ({ starships }) => {
-    if (!starships || starships.length === 0) {
+    if (!starships) {
         return (
             <>
                 <h2>Starships</h2>

@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { useEffect } from 'react'
 import './App.css'
 import StarshipSearch from './components/StarshipSearch';
 import StarshipList from './components/StarshipList';
 // src/App.jsx
-
+const BASE_URL = 'https://swapi.dev/api/';
 const App = () => {
  const [starships,setStarships] = useState([]);
  const [search,setSearch] = useState('');
@@ -11,12 +12,12 @@ const App = () => {
    setSearch(value)
  };
   async function fetchStarships (term) {
-    const starshipsResponse = await fetch(`https://swapi.dev/api/starships/?search=${encodeURIComponent(term)}`);
+    const starshipsResponse = await fetch(`${BASE_URL}starships/?search=${encodeURIComponent(term)}`);
     const starshipsList = await starshipsResponse.json();
     setStarships(starshipsList.results);    
     return true;
   }
-
+  useEffect(() => {fetchStarships();}, []);
   return (
     <>
       <h1>Stars Wars API</h1>
